@@ -10,11 +10,11 @@ declare let window: any;
   providedIn: 'root'
 })
 export class AuthService {
-  private ethereum = window.ethereum;
-
   public accountSubject = new Subject<string>();
-  public account: string = '';
+  public account = '';
   public account$ = this.accountSubject.asObservable();
+
+  private ethereum = window.ethereum;
 
   constructor(private web3: Web3,
               private router: Router) {}
@@ -51,6 +51,7 @@ export class AuthService {
   public disconnect(): void {
     this.ethereum.request({
       method: 'eth_requestAccounts',
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       params: [{eth_accounts: {}}]
     }).then(() => {
       this.account = '';
