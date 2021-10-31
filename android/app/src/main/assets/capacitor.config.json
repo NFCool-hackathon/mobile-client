@@ -1,0 +1,6 @@
+{
+	"appId": "com.example.app",
+	"appName": "nf-cool-client-mobile",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

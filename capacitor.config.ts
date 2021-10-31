@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'NFCool client mobile',
+  appId: 'xyz.nfcool.app',
+  appName: 'nf-cool-client-mobile',
   webDir: 'www',
   bundledWebRuntime: false
 };
