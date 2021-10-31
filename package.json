@@ -6,6 +6,8 @@
   "scripts": {
     "ng": "ng",
     "ng mumbai": "ng serve --configuration mumbai",
+    "eslint": "eslint src/app/**/*",
+    "eslint:autofix": "eslint src/app/**/* --fix",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
