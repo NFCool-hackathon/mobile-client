@@ -1,5 +1,5 @@
 {
-	"appId": "com.example.app",
+	"appId": "xyz.nfcool.app",
 	"appName": "nf-cool-client-mobile",
 	"webDir": "www",
 	"bundledWebRuntime": false
