@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'deep',
     loadChildren: () => import('./deep/deep.module').then( m => m.DeepPageModule)
+  },
+  {
+    path: 'token/:tokenId/:unitId',
+    loadChildren: () => import('./pages/token-unit/token-unit.module').then( m => m.TokenUnitPageModule)
   }
 ];
 @NgModule({
