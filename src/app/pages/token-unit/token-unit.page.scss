@@ -1,3 +1,22 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.btn-box {
+  width: 100%;
+  padding: 15px;
+
+  button {
+    width: 100%;
+  }
+}
+
+
+
+
 .product-image {
   height: 400px;
   width: 100%;
@@ -7,4 +26,5 @@
 }
 
 .infos {
+  padding: 15px;
 }
