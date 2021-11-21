@@ -1,6 +1,10 @@
+import {infuraKovanProvider} from '../../keys.env';
+
 export const environment = {
   production: false,
-  chainId: 80001,
-  chainSymbol: 'MATIC',
-  contractAddress: '0x2eD6ED54679c9d486dEcCe2e955dB9DC4C34E4b5'
+  chainId: 42,
+  chainSymbol: 'ETH',
+  provider: infuraKovanProvider,
+  websiteUrl: 'nfcool.web.app',
+  contractAddress: '0x27a9C18d90EA075bC811D203dF60cc57adA70914'
 };

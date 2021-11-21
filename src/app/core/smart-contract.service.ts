@@ -17,7 +17,7 @@ export class SmartContractService {
 
   constructor(private web3: Web3,
               private _auth: AuthService) {
-    this.web3.setProvider('https://rpc-mumbai.maticvigil.com/');
+    this.web3.setProvider(environment.provider);
   }
 
   public async getToken(id: number): Promise<TokenModel> {
