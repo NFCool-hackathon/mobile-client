@@ -57,6 +57,6 @@ export class TokenUnitPage implements OnInit {
   }
 
   goToMetamask() {
-    window.location.href = 'https://' + environment.websiteUrl + '/token/' + this.tokenId + '/' + this.unitId;
+    window.location.href = 'https://' + environment.websiteUrl + '/#/token/' + this.tokenId + '/' + this.unitId;
   }
 }
