@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TokenUnitPageRoutingModule } from './token-unit-routing.module';
 
 import { TokenUnitPage } from './token-unit.page';
+import {Ndef, NFC} from '@ionic-native/nfc/ngx';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { TokenUnitPage } from './token-unit.page';
     IonicModule,
     TokenUnitPageRoutingModule
   ],
-  declarations: [TokenUnitPage]
+  declarations: [TokenUnitPage],
+  providers: [NFC, Ndef]
 })
 export class TokenUnitPageModule {}

@@ -4,7 +4,8 @@ import {SmartContractService} from '../../core/smart-contract.service';
 import {createInitialTokenModel, TokenModel} from '../../models/token.model';
 import {AlertController} from '@ionic/angular';
 import {createInitialUnitModel, UnitModel} from '../../models/unit.model';
-import {environment} from "../../../environments/environment";
+import {environment} from '../../../environments/environment';
+import {NfcService} from '../../core/nfc.service';
 
 @Component({
   selector: 'app-token-unit',
@@ -12,6 +13,10 @@ import {environment} from "../../../environments/environment";
   styleUrls: ['./token-unit.page.scss'],
 })
 export class TokenUnitPage implements OnInit {
+
+  status: 'unchecked' | 'valid' | 'invalid' = 'unchecked';
+
+  displayModal = false;
 
   tokenId: number;
   unitId: number;
@@ -23,7 +28,8 @@ export class TokenUnitPage implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private smartcontract: SmartContractService,
-              private alertCtrl: AlertController) { }
+              private alertCtrl: AlertController,
+              private nfcService: NfcService) { }
 
   ngOnInit() {
     this.tokenId = parseInt(this.route.snapshot.paramMap.get('tokenId'), 10);
@@ -58,5 +64,22 @@ export class TokenUnitPage implements OnInit {
 
   goToMetamask() {
     window.location.href = 'https://' + environment.websiteUrl + '/#/token/' + this.tokenId + '/' + this.unitId;
+  }
+
+  isAuthentic() {
+    this.displayModal = true;
+    this.nfcService.readTagAndroid().then((tag: any) => {
+      const id: number[] = tag.id as number[];
+      if (tag.id.join('') === this.unit.nfcId) {
+        this.status = 'valid';
+      } else {
+        this.status = 'invalid';
+      }
+      this.displayModal = false;
+    });
+  }
+
+  closeNfcModal() {
+    this.displayModal = false;
   }
 }
