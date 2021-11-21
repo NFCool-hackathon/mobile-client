@@ -19,6 +19,7 @@
 
 .product-image {
   height: 400px;
+  padding: 10px;
   width: 100%;
   background-position: center;
   background-size: cover;
@@ -27,4 +28,50 @@
 
 .infos {
   padding: 15px;
+}
+
+.modal-bg {
+  background-color: black;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      color: black;
+    }
+  }
+}
+
+.chip {
+  padding: 10px;
+  color: white;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.chip-valid{
+  background-color: green;
+}
+
+.chip-invalid {
+  background-color: red;
 }

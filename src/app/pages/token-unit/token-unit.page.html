@@ -7,7 +7,10 @@
 <ion-content>
   <div class="box">
     <div>
-      <div class="product-image" style="background-image: url('{{token.uri}}')"></div>
+      <div class="product-image" style="background-image: url('{{token.uri}}')">
+        <div class="chip chip-valid" *ngIf="status == 'valid'">Authentic</div>
+        <div class="chip chip-invalid" *ngIf="status == 'invalid'">Counterfeited</div>
+      </div>
       <div class="infos">
         <h2>{{token.name}}</h2>
         <p>
@@ -18,7 +21,15 @@
       </div>
     </div>
     <div class="btn-box">
+      <button class="btn-action btn" (click)="isAuthentic()" *ngIf="status === 'unchecked'">Check Authenticity</button>
       <button class="btn btn-action" (click)="goToMetamask()">Claim Ownership</button>
     </div>
   </div>
 </ion-content>
+<div class="modal-bg" *ngIf="displayModal">
+</div>
+<div class="modal-container" *ngIf="displayModal" (click)="closeNfcModal()">
+  <div class="modal">
+    <p>Ready to scan...</p>
+  </div>
+</div>
