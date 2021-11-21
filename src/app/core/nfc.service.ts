@@ -6,6 +6,7 @@ import {NFC} from '@ionic-native/nfc/ngx';
 })
 export class NfcService {
 
+
   constructor(private nfc: NFC) { }
 
   public async readTagAndroid(): Promise<any> {
@@ -14,7 +15,9 @@ export class NfcService {
       const readerMode$ = this.nfc.readerMode(flags).subscribe(
         tag => {
           console.log(JSON.stringify(tag));
-          readerMode$.unsubscribe();
+          setTimeout(() => {
+            readerMode$.unsubscribe();
+          },1000);
           resolve(tag);
         },
         err => console.log('Error reading tag', err)
