@@ -22,7 +22,7 @@
     </div>
     <div class="btn-box">
       <button class="btn-action btn" (click)="isAuthentic()" *ngIf="status === 'unchecked'">Check Authenticity</button>
-      <button class="btn btn-action" (click)="goToMetamask()">Claim Ownership</button>
+      <button class="btn btn-action" (click)="goToMetamask()" *ngIf="unit.status == 'sold'">Claim Ownership</button>
     </div>
   </div>
 </ion-content>
