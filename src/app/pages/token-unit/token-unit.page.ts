@@ -69,7 +69,6 @@ export class TokenUnitPage implements OnInit {
   isAuthentic() {
     this.displayModal = true;
     this.nfcService.readTagAndroid().then((tag: any) => {
-      const id: number[] = tag.id as number[];
       if (tag.id.join('') === this.unit.nfcId) {
         this.status = 'valid';
       } else {
