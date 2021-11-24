@@ -28,4 +28,7 @@ export class SmartContractService {
     return await this.contract.methods.tokenUnitData(tokenId, unitId).call();
   }
 
+  public async getBrandName(): Promise<string> {
+    return await this.contract.methods.getBrandName().call();
+  }
 }

@@ -25,6 +25,7 @@ export class TokenUnitPage implements OnInit {
 
   token: TokenModel = createInitialTokenModel();
   unit: UnitModel = createInitialUnitModel();
+  brandName = '';
 
   constructor(private route: ActivatedRoute,
               private smartcontract: SmartContractService,
@@ -46,6 +47,10 @@ export class TokenUnitPage implements OnInit {
         subHeader: 'Error details:',
         message: e,
       });
+    });
+
+    this.smartcontract.getBrandName().then(name => {
+      this.brandName = name;
     });
 
     this.smartcontract.getTokenUnit(this.tokenId, this.unitId).then(res => {
