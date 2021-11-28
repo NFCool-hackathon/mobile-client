@@ -25,6 +25,7 @@ export class TokenUnitPage implements OnInit {
 
   token: TokenModel = createInitialTokenModel();
   unit: UnitModel = createInitialUnitModel();
+  brandName = '';
 
   constructor(private route: ActivatedRoute,
               private smartcontract: SmartContractService,
@@ -48,6 +49,10 @@ export class TokenUnitPage implements OnInit {
       });
     });
 
+    this.smartcontract.getBrandName().then(name => {
+      this.brandName = name;
+    });
+
     this.smartcontract.getTokenUnit(this.tokenId, this.unitId).then(res => {
       this.unit = res as UnitModel;
       console.log(this.unit);
@@ -69,7 +74,6 @@ export class TokenUnitPage implements OnInit {
   isAuthentic() {
     this.displayModal = true;
     this.nfcService.readTagAndroid().then((tag: any) => {
-      const id: number[] = tag.id as number[];
       if (tag.id.join('') === this.unit.nfcId) {
         this.status = 'valid';
       } else {

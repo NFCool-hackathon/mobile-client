@@ -6,5 +6,5 @@ export const environment = {
   chainSymbol: 'ETH',
   provider: infuraKovanProvider,
   websiteUrl: 'nfcool.web.app',
-  contractAddress: '0x27a9C18d90EA075bC811D203dF60cc57adA70914'
+  contractAddress: '0x7e7d3891E753E07860Fb84DbAcd6fDE925c91328'
 };

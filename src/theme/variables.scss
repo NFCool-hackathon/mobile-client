@@ -3,7 +3,6 @@
 
 /** Ionic CSS Variables **/
 :root {
-
   --color-main: #04395E;
   --color-main-reverse: #fff;
   --color-main-darker: #031D44;
@@ -12,6 +11,7 @@
   --color-bg-layer1: #C4BBAF;
   --color-bg-layer2: #A5978B;
   --color-bg-really-lighter: #e8e8e8;
+  --color-bg-white: #ffffff;
 
   --color-soft-danger: #875053;
 
@@ -23,6 +23,7 @@
   --color-warning-light: #fddca0;
   --color-warning: orange;
   --color-warning-dark: #c78001;
+
 
   /** primary **/
   --ion-color-primary: #3880FF;
@@ -218,6 +219,8 @@
    */
 
   .md body {
+
+
     --ion-background-color: #121212;
     --ion-background-color-rgb: 18,18,18;
 
