@@ -1,5 +1,7 @@
 # NFCool Client Mobile
 
+Mobile client repository for the Chainlink hackathon submission NFCool: https://devpost.com/software/nfc-for-real-goods 
+
 ## Table of contents:
 
 # Pre-reqs
